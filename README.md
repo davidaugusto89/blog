@@ -78,7 +78,7 @@ Inicie o servidor
   php artisan serve
 ```
 
-Enderço para testes do sistema
+No navegador acesso a url abaixo, para seguir com os testes no sistema.
 ```bash
 http://127.0.0.1:8000
 ```
