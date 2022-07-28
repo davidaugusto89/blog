@@ -7,28 +7,40 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use Cache;
 
-class PostRepository implements PostRepositoryInterface 
+class PostRepository implements PostRepositoryInterface
 {
-    public function getAllPosts($request) 
+    private $expiration = 5; //minutos
+
+    public function getAllPosts($request)
     {
         $search = $request->input('search');
-        if (empty($search)) {
-            return Post::with('authors')->orderByDesc('created_at')->get();
-        } else {
-            return Post::with('authors')
-                       ->where('title','LIKE','%'.$search.'%')
-                       ->orWhere('body','LIKE','%'.$search.'%')
-                       ->get();
-        }
+
+        $key = 'posts_' . $search;
+
+        return Cache::remember($key, $this->expiration, function () use ($search) {
+            if (empty($search)) {
+                return Post::with('authors')->orderByDesc('created_at')->get();
+            } else {
+                return Post::with('authors')
+                    ->where('title', 'LIKE', '%' . $search . '%')
+                    ->orWhere('body', 'LIKE', '%' . $search . '%')
+                    ->get();
+            }
+        });
     }
 
-    public function getPostById($postId) 
+    public function getPostById($postId)
     {
-        return Post::with('authors')->find($postId);
+        $key = 'post_' . $postId;
+
+        return Cache::remember($key, $this->expiration, function () use ($postId) {
+            return Post::with('authors')->find($postId);
+        });
     }
 
-    public function createPost($request) 
+    public function createPost($request)
     {
         $postDetails = [
             'title' => $request->input('title'),
@@ -36,7 +48,7 @@ class PostRepository implements PostRepositoryInterface
             'user_id' => Auth::id(),
         ];
 
-        if($request->file('image')){
+        if ($request->file('image')) {
             $postDetails['image'] = $this->uploadImage($request);
         }
 
@@ -46,7 +58,7 @@ class PostRepository implements PostRepositoryInterface
         return Post::create($postDetails);
     }
 
-    public function updatePost($postId, $request) 
+    public function updatePost($postId, $request)
     {
         $postDetails = [
             'title' => $request->input('title'),
@@ -54,7 +66,7 @@ class PostRepository implements PostRepositoryInterface
             'user_id' => Auth::id(),
         ];
 
-        if($request->file('image')){
+        if ($request->file('image')) {
             $postDetails['image'] = $this->uploadImage($request);
             $this->removeImage($postId);
         }
@@ -65,9 +77,9 @@ class PostRepository implements PostRepositoryInterface
         return Post::whereId($postId)->update($postDetails);
     }
 
-    public function deletePost($postId) 
+    public function deletePost($postId)
     {
-        if (Post::find($postId)) {        
+        if (Post::find($postId)) {
             Session::flash('message', 'Post removido com sucesso!');
             Session::flash('icon', 'success');
 
@@ -77,18 +89,20 @@ class PostRepository implements PostRepositoryInterface
         Post::destroy($postId);
     }
 
-    public function uploadImage($request){
+    public function uploadImage($request)
+    {
         $file = $request->file('image');
         $extension = $file->getClientOriginalExtension();
-        $filename = uniqid().'.'.$extension;
+        $filename = uniqid() . '.' . $extension;
         $request->image->move(public_path('images'), $filename);
         return $filename;
     }
 
-    public function removeImage($postId){
+    public function removeImage($postId)
+    {
         $post = Post::find($postId);
         $filename = $post->image;
-        $image_path = public_path().'/images/'.$filename;
+        $image_path = public_path() . '/images/' . $filename;
         unlink($image_path);
     }
 }
