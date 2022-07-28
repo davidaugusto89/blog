@@ -26,19 +26,19 @@ Sistema para cadastro de posts e usuários utilizando: HTML, CSS, Bootstrap, JS,
 
 Antes de iniciar a instalação do projeto é necessário verificar se o ambiente possui: 
 
-- [ ] PHP >= 8.0 e MySQL
-Pode ser utilizado WAMP/XAMPP/etc:
+**Composer**
+https://getcomposer.org/
+
+**Git**
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+**PHP >= 8.0 e MySQL**
+Pode ser utilizado WAMP/XAMPP/etc.
 https://www.wampserver.com/en/
 https://www.apachefriends.org/pt_br/index.html
 
-- [ ] Composer
-https://getcomposer.org/
-
-- [ ] Git
-https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-
-- [ ] Redis
-Caso seja utilizado localmente será necessário instalar:
+**Redis**
+Caso seja utilizado localmente será necessário instalar.
 https://redis.io/docs/getting-started/installation/
 
 ## Instalação
