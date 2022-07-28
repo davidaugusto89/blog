@@ -1,12 +1,12 @@
 # Blog
 
-Sistema para cadastro de posts e usuários utilizando: 
+Sistema para cadastro de posts e usuários utilizando: HTML, CSS, Bootstrap, JS, JQuery, PHP, Laravel, MySQL e Redis.
 
-![Stacks](https://skills.thijs.gg/icons?i=html,css,js,php,laravel,mysql,jquery,bootstrap,redis)
+![Stacks](https://skills.thijs.gg/icons?i=html,css,bootstrap,js,jquery,php,laravel,mysql,redis)
 
 ## Requisitos básicos
 
-> PHP >= 7.4
+> PHP >= 8.0
 
 > MySQL
 
