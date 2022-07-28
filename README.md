@@ -121,8 +121,8 @@ Dados de acesso para utilizar o usuário `ADMIN` (administrador).
 
 | Parâmetro   | Valor      |
 | :---------- | :--------- |
-| `E-mail` | `admin@gmail.com` |
-| `Senha`  | `admin123` |
+| E-mail | admin@gmail.com |
+| Senha  | admin123 |
 
 ## Autor
 
