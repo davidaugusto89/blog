@@ -69,16 +69,22 @@ php artisan key:generate
 
 Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
 
-Banco de dados MySQL
+Banco de dados MySQL: 
 `DB_HOST`
+
 `DB_PORT`
+
 `DB_DATABASE`
+
 `DB_USERNAME`
+
 `DB_PASSWORD`
 
-Redis
+Redis:
 `REDIS_HOST`
+
 `REDIS_PASSWORD`
+
 `REDIS_PORT`
 
 ## Rodando localmente
