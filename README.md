@@ -4,6 +4,23 @@ Sistema para cadastro de posts e usuários utilizando: HTML, CSS, Bootstrap, JS,
 
 ![Stacks](https://skills.thijs.gg/icons?i=html,css,bootstrap,js,jquery,php,laravel,mysql,redis)
 
+## Funcionalidades
+
+- Cadastro de usuário com nome, e-mail e senha
+- Área de login solicitando e-mail e senha
+- Página para edição de informações pessoais
+- Cadastro de post com Título, Texto e Imagem
+- Listagem de posts publicados, com título, imagem, autor e data de publicação.
+Quando não estiver logado, os posts devem estar apenas para leitura. Caso o usuário
+esteja logado, poderá editar e excluir seus próprios posts
+- Campo para filtrar e ou pesquisar os posts na exibição de posts do front-end
+- Página para configuração de perfis de acesso. Esta página estará disponível apenas
+para usuários do com perfil de administrador, nela deverá existir uma lista dos usuários
+cadastrados no sistema, podendo o administrador dar a outro usuário o mesmo perfil de
+acesso à outros usuários do sistema.
+- O Admin poderá também na listagem de posts, editar e excluir posts de outros
+usuários.
+
 ## Requisitos básicos
 
 > PHP >= 8.0
