@@ -39,6 +39,7 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 **PHP >= 8.0 e MySQL**
 
 Pode ser utilizado WAMP/XAMPP/etc.
+
 https://www.wampserver.com/en/
 https://www.apachefriends.org/pt_br/index.html
 
@@ -46,6 +47,7 @@ https://www.apachefriends.org/pt_br/index.html
 **Redis**
 
 Caso seja utilizado localmente será necessário instalar.
+
 https://redis.io/docs/getting-started/installation/
 
 
