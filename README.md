@@ -68,7 +68,7 @@ cd blog
 Instale as dependências
 
 ```bash
-compose install
+composer install
 ```
 
 Crie o arquivo `.env` com base no `.env.example`
