@@ -140,7 +140,3 @@ Dados de acesso para utilizar o usuário `ADMIN` (administrador).
 | :---------- | :--------- |
 | E-mail | admin@gmail.com |
 | Senha  | admin123 |
-
-## Autor
-
-- [@davidaugusto89](https://www.github.com/davidaugusto89)
