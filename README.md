@@ -56,19 +56,19 @@ https://redis.io/docs/getting-started/installation/
 Clone o projeto
 
 ```bash
-  git clone https://github.com/davidaugusto89/blog.git
+git clone https://github.com/davidaugusto89/blog.git
 ```
 
 Entre no diretório do projeto
 
 ```bash
-  cd blog
+cd blog
 ```
 
 Instale as dependências
 
 ```bash
-  npm install
+compose install
 ```
 
 Crie o arquivo `.env` com base no `.env.example`
