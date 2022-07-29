@@ -140,3 +140,11 @@ Dados de acesso para utilizar o usuário `ADMIN` (administrador).
 | :---------- | :--------- |
 | E-mail | admin@gmail.com |
 | Senha  | admin123 |
+
+## Linux
+
+Caso o sistema operacional utilizado seja o Linux, é necessário dar permissão de escrita e leitura na pasta `public/images`
+
+```bash
+chmod 777 /public/images
+```
