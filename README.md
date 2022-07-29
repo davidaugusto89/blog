@@ -112,19 +112,19 @@ Redis:
 Crie as tabelas no banco de dados
 
 ```bash
-  php artisan migrate
+php artisan migrate
 ```
 
 Para o cadastro do 1º usuário `ADMIN` (administrador) do sistema.
 
 ```bash
-  php artisan db:seed --class=CreateAdminUserSeeder
+php artisan db:seed --class=CreateAdminUserSeeder
 ```
 
 Inicie o servidor
 
 ```bash
-  php artisan serve
+php artisan serve
 ```
 
 No navegador acesso a url abaixo, para seguir com os testes no sistema.
